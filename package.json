@@ -1,14 +1,21 @@
 {
-	"name": "codeforces-cli",
-  	"version": "1.0.0",
-  	"description": "CLI for using codeforces with your terminal",
-  	"main": "index.js",
-  	"bin": {
-    	"cftool": "./bin/CFHandler.js"
-  	},
-  	"scripts": {
-    	"test": "echo \"Error: no test specified\" && exit 1"
-  	},
-  	"author": "Vishisht Priyadarshi",
-  	"license": "MIT"
+  "name": "codeforces-cli",
+  "version": "1.0.0",
+  "description": "CLI for using codeforces with your terminal",
+  "main": "index.js",
+  "bin": {
+    "cftool": "./bin/cftool.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vishisht Priyadarshi",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "colors": "^1.4.0",
+    "commander": "^5.1.0",
+    "configstore": "^5.0.1",
+    "inquirer": "^7.1.0"
+  }
 }
