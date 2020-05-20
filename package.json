@@ -1,0 +1,14 @@
+{
+	"name": "codeforces-cli",
+  	"version": "1.0.0",
+  	"description": "CLI for using codeforces with your terminal",
+  	"main": "index.js",
+  	"bin": {
+    	"cftool": "./bin/CFHandler.js"
+  	},
+  	"scripts": {
+    	"test": "echo \"Error: no test specified\" && exit 1"
+  	},
+  	"author": "Vishisht Priyadarshi",
+  	"license": "MIT"
+}
