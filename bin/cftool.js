@@ -8,6 +8,7 @@ const figlet = require('figlet');
 program
 	.version(version)
 	.command('cfuser', 'Setting up details of the user')
+	.command('login', 'Logging into the Codeforces Platform')
 	.parse(process.argv);
 
 console.log(chalk.blue(
