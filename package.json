@@ -16,6 +16,7 @@
     "colors": "^1.4.0",
     "commander": "^5.1.0",
     "configstore": "^5.0.1",
+    "figlet": "^1.4.0",
     "inquirer": "^7.1.0"
   }
 }
