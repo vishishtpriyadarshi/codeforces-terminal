@@ -99,8 +99,8 @@ const login = {
 
             // Post request
             request.post(requestDetails, (error, response, body) => {
-
-				// console.log( response.statusCode );
+				
+				//console.log( response.statusCode );
                 if (error)
 					return reject(e);
 				if ( response.statusCode != 302 )

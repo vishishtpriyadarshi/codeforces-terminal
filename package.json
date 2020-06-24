@@ -19,6 +19,7 @@
     "configstore": "^5.0.1",
     "figlet": "^1.4.0",
     "inquirer": "^7.1.0",
+    "ora": "^4.0.4",
     "request": "^2.88.2",
     "tough-cookie-file-store": "^2.0.2"
   }

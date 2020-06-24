@@ -5,9 +5,6 @@ const { version } = require('../package.json');
 const chalk = require('chalk');
 const figlet = require('figlet');
 
-console.log(chalk.blue(
-    figlet.textSync('cf-tool', { horizontalLayout: 'full' })
-  ));
 
 program
 	.version(version)

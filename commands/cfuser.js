@@ -3,6 +3,12 @@ const colors = require('colors');
 const CfuserManager = require('../lib/CfuserManager');
 const { isRequired } = require('../utils/validation');
 const chalk = require('chalk');
+const figlet = require('figlet');
+
+console.log(chalk.blue(
+    figlet.textSync('cf-tool', { horizontalLayout: 'full' })
+  ));
+
 
 const cfuser = {
 	
