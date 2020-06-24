@@ -4,46 +4,59 @@ const toughcookie = require('tough-cookie-filestore');
 
 const headerObject = require('../lib/headerObject');
 const CfuserManager = require('../lib/CfuserManager');
-const path = require('path');
+const {cookiePath} = require('../lib/cookiePath');
 
 
 const login = {
 	
 	checkLoginStatus(){
+		
 		return new Promise( (resolve, reject) => {
-			request('https://codeforces.com/enter', (error, response, html) => {
-				if(error){	// || response.statusCode == 200) => HANDLE THIS ISSUE
-					reject(error);
-				}
-				else{
-					const $ = cheerio.load(html);
-					const enterPage = $('.lang-chooser a');
-
-					resolve(enterPage.eq(2).html());
-				}
-			})
+			const requestDetails = {
+				url: 'https://codeforces.com/enter',
+				headers: headerObject(),
+				jar: request.jar(new toughcookie(cookiePath)),
+				timeout: 30000
+			}
+			
+			request.get(requestDetails, (error, response, body) => {
+                if (error)
+					return reject(error);
+				
+                const $ = cheerio.load(body);
+                const currentUser = $('.lang-chooser a').eq(2).text();
+                
+				resolve(currentUser);
+            });
 		})
 	},
 	
 	getCSRFToken(){
 		return new Promise( (resolve, reject) => {
-			request('https://codeforces.com/enter', (error, response, html) => {
-				if(error){	// || response.statusCode == 200) => HANDLE THIS ISSUE
-					reject(error);
-				}
-				else{
-					const $ = cheerio.load(html);
-                	const CSRF_token = $('input').attr('value');
+			
+			const requestDetails = {
+                url: 'https://codeforces.com/enter',
+                headers: headerObject(),
+                jar: request.jar(new toughcookie(cookiePath)),
+                timeout: 30000
+            }
+			
+            request.get(requestDetails, (error, response, body) => {
+				
+                if (error)
+					return reject(error);
+				
+                const $ = cheerio.load(body);
+                const CSRF_token = $('input').attr('value');
+				
+               	if ( CSRF_token === undefined)
+			 		return reject(new Error('CSRF Token retrieval failed !'));
+
+				if( CSRF_token.length < 20 )
+					return reject(new Error('Invalid CSRF Token !'));
 					
-                	if ( CSRF_token === undefined)
-                    	return reject(new Error('CSRF Token retrieval failed !'));
-					
-					if( CSRF_token.length < 20 )
-						return reject(new Error('Invalid CSRF Token !'));
-					
-                	resolve(CSRF_token);
-				}
-			})
+			 	resolve(CSRF_token);
+            });
 		})
 	},
 	
@@ -60,24 +73,13 @@ const login = {
                 return reject(new Error('Set up user details first!'));
             }
 			 
-			// *********** ISSUE *****************
-			// Need to create a cookie.json file
-			 
-			 
-			//Seeting up cookies path and cookie jar
-			 
-			//const config_directory = path.join(process.env.HOME, './workspace');  // Doubt in '.cftool'
-			//const cookiePath = path.join(config_directory, './codeforces-cli/cookie.json');
-            const jar = request.jar(new toughcookie('./cookie.json'));
-			
 			const headerDetails = {
                 origin : 'https://codeforces.com',
                 referer : 'https://codeforces.com/enter?back=%2F'
             }
 			const headers = headerObject(headerDetails);
-			 
-			 
-			 
+			const jar = request.jar(new toughcookie(cookiePath));
+			
             // Create Form
             const form = {
                 handleOrEmail: handle,
@@ -101,6 +103,7 @@ const login = {
 				//console.log(password);
 				console.log(CSRF_token);
 				console.log(body);
+				console.log(jar);
                 if (error)
 					return reject(e);
                 if ( response.statusCode != 200 )
