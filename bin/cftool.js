@@ -13,5 +13,6 @@ program
 	.version(version)
 	.command('cfuser', 'Setting up details of the user')
 	.command('login', 'Logging into the Codeforces Platform')
+	.command('logout', 'Logout from CF').command('logout', 'Logout from CF')
 	.parse(process.argv);
 

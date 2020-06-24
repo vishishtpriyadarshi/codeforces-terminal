@@ -99,18 +99,14 @@ const login = {
 
             // Post request
             request.post(requestDetails, (error, response, body) => {
-				console.log(handle);
-				//console.log(password);
-				console.log(CSRF_token);
-				console.log(body);
-				console.log(jar);
+
+				// console.log( response.statusCode );
                 if (error)
 					return reject(e);
-                if ( response.statusCode != 200 )
+				if ( response.statusCode != 302 )
 					return reject('Failed to login');
                 
 				resolve();
-				//console.log(body);
             });
         })
     }
