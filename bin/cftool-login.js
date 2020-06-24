@@ -11,7 +11,15 @@ program
 			if(currentHandle != 'Enter')
 				console.log(currentHandle, ' logged in !!!');
 			else
-				console.log('Unable to login');
+				{
+					// console.log('Unable to login');
+					const CSRF_token = await login.getCSRFToken();
+					await login.loggingIn(CSRF_token);
+					const currentHandle2 = await login.checkLoginStatus();
+					console.log('Successfully logged in as ', currentHandle2);
+				}
+				
+			//console.log(currentHandle);
 		}
 		catch(err){
 			console.log(err);
