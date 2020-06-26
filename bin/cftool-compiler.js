@@ -1,20 +1,20 @@
 const program = require('commander');
-//const compiler = require('../commands/compiler');
+const compiler = require('../commands/compiler');
 
 
 program
 	.command('set')
 	.description('Set new compiler')
-	.action(() => console.log('Set compiler'));
+	.action(compiler.setCompiler);
 
 program
 	.command('show')
 	.description('Show added compiler')
-	.action(() => console.log('Show compiler'));
+	.action(compiler.showCompiler);
 
 program
 	.command('remove')
 	.description('Remove the added compiler')
-	.action(() => console.log('Remove compiler'));
+	.action(compiler.removeCompiler);
 
 program.parse(process.argv);
