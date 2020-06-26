@@ -12,14 +12,19 @@
   "author": "Vishisht Priyadarshi",
   "license": "MIT",
   "dependencies": {
+    "async": "^3.2.0",
     "chalk": "^4.0.0",
     "cheerio": "^1.0.0-rc.3",
+    "cli-table2": "^0.2.0",
     "colors": "^1.4.0",
     "commander": "^5.1.0",
     "configstore": "^5.0.1",
     "figlet": "^1.4.0",
     "inquirer": "^7.1.0",
+    "jsonfile": "^6.0.1",
+    "lodash": "^4.17.15",
     "ora": "^4.0.4",
+    "qs": "^6.9.4",
     "request": "^2.88.2",
     "tough-cookie-file-store": "^2.0.2"
   }

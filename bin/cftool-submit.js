@@ -1,6 +1,7 @@
 const program = require('commander');
 const request = require('request');
 const cheerio = require('cheerio');
+const async = require('async');
 
 const chalk = require('chalk');
 const ora = require('ora');
@@ -54,6 +55,64 @@ program
 			await submit.submitCode(submissionDetails);
 			
 			console.log(chalk.green('[+] Submission successful!'));
+			
+			
+			// Dynamic Verdict Viewer
+			let url = verdictHelper.generateURL();
+			
+			let reqOptions = {
+				uri: url,
+				json: true,
+				timeout: 45000
+			};
+			
+			
+			var keepWatching = true;
+			async.whilst(
+				() => {
+					return keepWatching;
+				},
+				(callback) => {
+
+					spinner.text = 'Refreshing..';
+					spinner.start();
+
+					request
+						.get(reqOptions, (error, response, body) => {
+
+							if(error){
+								return callback(error);
+							}
+
+							let { statusCode } = response;
+							if( statusCode !== 200 ){
+								return next( has(body,'comment') ? body.comment : `HTTP failed with status ${statusCode}`);
+							}
+
+							if( body.status !== 'OK' ){
+								return callback(body.comment);
+							}
+
+							spinner.succeed();
+							keepWatching = generateTable(body.result);
+
+							//
+							// Still testing, Wait x seconds and get status again
+							//
+							if( keepWatching ) {
+								return setTimeout(() => {
+									callback();
+								}, STATUS_DELAY);
+							}
+
+							return callback();
+						});
+				},
+				async.next
+			);
+				
+		// ===================================================
+			
 		
 		} catch (e) {
 			console.log(chalk.red().bold('[-] Failed to Submit!'))

@@ -62,7 +62,7 @@ typedef long long int ll;
 int main()
 {
     BOOST;
-    int q;
+    ll q;
     cin >> q;
     
     while(q--)
