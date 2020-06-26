@@ -12,5 +12,6 @@ program
 	.command('login', 'Log into the Codeforces Platform')
 	.command('logout', 'Log out from the Codeforces Platform')
 	.command('compiler', 'Manage compiler options')
+	.command('submit', 'Submit solution')
 	.parse(process.argv);
 
