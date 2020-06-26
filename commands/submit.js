@@ -80,6 +80,7 @@ const submit = {
                 if (error)
 					return reject (error);
 				
+				//console.log(body.result);
                 resolve();
             })
         });
