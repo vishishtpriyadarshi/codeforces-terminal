@@ -9,7 +9,7 @@ const figlet = require('figlet');
 program
 	.version(version)
 	.command('cfuser', 'Setting up details of the user')
-	.command('login', 'Logging into the Codeforces Platform')
-	.command('logout', 'Logout from CF').command('logout', 'Logout from CF')
+	.command('login', 'Log into the Codeforces Platform')
+	.command('logout', 'Log out from the Codeforces Platform')
 	.parse(process.argv);
 

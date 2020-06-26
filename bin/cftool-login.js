@@ -32,6 +32,7 @@ program
 			//console.log(currentHandle);
 		}
 		catch(err){
+			spinner2.fail();	// Logging in failed
 			console.log(err);
 		}
 	});

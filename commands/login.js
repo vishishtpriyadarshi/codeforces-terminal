@@ -101,11 +101,13 @@ const login = {
             request.post(requestDetails, (error, response, body) => {
 				
 				//console.log( response.statusCode );
-                if (error)
+                if ( error )
 					return reject(e);
 				if ( response.statusCode != 302 )
-					return reject('Failed to login');
+					return reject('Failed to login... Check your handle and password!');
                 
+				// TO DO: Handle the case when the CF is down
+				
 				resolve();
             });
         })
