@@ -5,9 +5,9 @@ const { isRequired } = require('../utils/validation');
 const chalk = require('chalk');
 const figlet = require('figlet');
 
-console.log(chalk.blue(
-    figlet.textSync('cf-tool', { horizontalLayout: 'full' })
-  ));
+// console.log(chalk.blue(
+//     figlet.textSync('cf-tool', { horizontalLayout: 'full' })
+//   ));
 
 
 const cfuser = {

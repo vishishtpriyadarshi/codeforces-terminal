@@ -5,6 +5,9 @@ const { version } = require('../package.json');
 const chalk = require('chalk');
 const figlet = require('figlet');
 
+const message = require('../commands/message');
+
+message.showMessage();
 
 program
 	.version(version)

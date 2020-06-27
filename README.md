@@ -15,8 +15,15 @@ touch cookie.json
 ### Commands
 ```
 root@VP:/workspace/codeforces-cli(master)# cftool
-Usage: cftool [options] [command]
 
+          __           _                     _
+   ___   / _|         | |_    ___     ___   | |
+  / __| | |_   _____  | __|  / _ \   / _ \  | |
+ | (__  |  _| |_____| | |_  | (_) | | (_) | | |
+  \___| |_|            \__|  \___/   \___/  |_|
+
+
+cftool  v1.0.0 by Vishisht Priyadarshi
 Options:
   -V, --version   output the version number
   -h, --help      display help for command
@@ -27,6 +34,7 @@ Commands:
   logout          Log out from the Codeforces Platform
   compiler        Manage compiler options
   submit          Submit solution
+  rating          Show/compare rating of the specified user(s)
   help [command]  display help for command
 ```
 
