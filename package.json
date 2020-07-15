@@ -4,7 +4,7 @@
   "description": "CLI for using codeforces with your terminal",
   "main": "index.js",
   "bin": {
-    "cftool": "./bin/cftool.js"
+    "cftool": "bin/cftool.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -39,6 +39,19 @@
     "qs": "^6.9.4",
     "request": "^2.88.2",
     "tough-cookie-file-store": "^2.0.2",
+    "tough-cookie-filestore": "0.0.1",
     "update-check": "^1.5.4"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishishtpriyadarshi/codeforces-terminal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vishishtpriyadarshi/codeforces-terminal/issues"
+  },
+  "homepage": "https://github.com/vishishtpriyadarshi/codeforces-terminal#readme"
 }

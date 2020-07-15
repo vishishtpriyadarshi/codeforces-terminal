@@ -16,7 +16,7 @@ const login = {
 				url: 'https://codeforces.com/enter',
 				headers: headerObject(),
 				jar: request.jar(new toughcookie(cookiePath)),
-				timeout: 30000
+				timeout: 45000
 			}
 			
 			request.get(requestDetails, (error, response, body) => {
@@ -24,8 +24,8 @@ const login = {
 					return reject(error);
 				
                 const $ = cheerio.load(body);
+                const deb = $.html();
                 const currentUser = $('.lang-chooser a').eq(2).text();
-                
 				resolve(currentUser);
             });
 		})
