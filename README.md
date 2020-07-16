@@ -158,7 +158,8 @@ cftool logout
 ```
 ![logout](demo/logout.gif)
 
-
+### Changelog
+[ Read the changelog here 🡒](https://github.com/vishishtpriyadarshi/codeforces-terminal/blob/master/CHANGELOG.md)
 ### Features to be Added
 
 - [X] Compare rating of users
