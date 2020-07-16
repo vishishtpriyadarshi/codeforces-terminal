@@ -18,9 +18,50 @@ touch cookie.json
 ```
 
 ### Usage
+```
+          __           _                     _
+   ___   / _|         | |_    ___     ___   | |
+  / __| | |_   _____  | __|  / _ \   / _ \  | |
+ | (__  |  _| |_____| | |_  | (_) | | (_) | | |
+  \___| |_|            \__|  \___/   \___/  |_|
+
+
+cftool  v1.0.1 by Vishisht Priyadarshi
+
+
+Usage: cftool [options] [command]
+
+Options:
+  -V, --version   output the version number
+  -h, --help      display help for command
+
+Commands:
+  cfuser          Setting up details of the user
+  login           Log into the Codeforces Platform
+  logout          Log out from the Codeforces Platform
+  compiler        Manage compiler options
+  submit          Submit solution
+  rating          Show Rating Graph of the specified user
+  help [command]  display help for
+```
+
 ![Introduction](demo/Introduction.gif)
 
 ### 1. Setting up Credentials
+
+```
+Usage: cftool-cfuser [options] [command]
+
+Options:
+  -h, --help      display help for command
+
+Commands:
+  set             Adding the details of the user
+  show            Show the details of the user
+  remove          Remove the details of the user
+  help [command]  display help for command
+  
+```
 
 ### a. Set handle
 ```
@@ -49,6 +90,20 @@ cftool login
 
 
 ### 3. Compiler Options
+
+```
+Usage: cftool-compiler [options] [command]
+
+Options:
+  -h, --help      display help for command
+
+Commands:
+  set             Set new compiler
+  show            Show added compiler
+  remove          Remove the added compiler
+  help [command]  display help for command
+```
+
 ### a. Select compiler 
 ```
 cftool compiler set
@@ -71,6 +126,19 @@ cftool submit
 
 
 ### 5. Display rating graph
+
+```
+Usage: cftool-rating [options] [command]
+
+Options:
+  -h, --help         display help for command
+
+Commands:
+  solo [options]     Show rating of a single user
+  compare [options]  Compare rating graph of 2 users
+  help [command]     display help for command
+```
+
 ### a. Single user
 ```
 cftool rating solo --handle=<handle_name>
@@ -95,7 +163,6 @@ cftool logout
 
 - [X] Compare rating of users
 - [ ] Dynamic verdict display
-- [ ] Download accepted solutions
 - [ ] Fetch problem statements with sample test cases
 - [ ] Fetch users' details and blogs
 - [ ] Display Contest Results
