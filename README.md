@@ -5,7 +5,7 @@ A command line tool to bring complete functionalities of Codeforces to your term
 cftool(codeforces-terminal) is a NodeJS based CLI tool which allows users to completely access codeforces using your terminal. Currently it enables users to login to the website using terminal and make submissions. It also displays rating graphs of single as well as multiple users. 
 
 Future versions will bring in the complete functionalities of the website to the terminal.
-### Build Instructions
+## Build Instructions
 ```
 git clone https://github.com/vishishtpriyadarshi/codeforces-terminal.git
 cd codeforces-terminal
@@ -17,7 +17,7 @@ cd ~/.cftool
 touch cookie.json
 ```
 
-### Usage
+## Usage
 ```
           __           _                     _
    ___   / _|         | |_    ___     ___   | |
@@ -47,7 +47,7 @@ Commands:
 
 ![Introduction](demo/Introduction.gif)
 
-### 1. Setting up Credentials
+## 1. Setting up Credentials
 
 ```
 Usage: cftool-cfuser [options] [command]
@@ -82,14 +82,14 @@ cftool cfuser remove
 ![remove_handle](demo/remove_handle.gif)
 
 
-### 2. Logging in
+## 2. Logging in
 ```
 cftool login
 ```
 ![login](demo/login.gif)
 
 
-### 3. Compiler Options
+## 3. Compiler Options
 
 ```
 Usage: cftool-compiler [options] [command]
@@ -117,7 +117,7 @@ cftool compiler remove
 ```
 ![compiler_remove](demo/compiler_remove.gif)
 
-### 4. Submit a problem
+## 4. Submit a problem
 ```
 cftool submit
 ```
@@ -125,7 +125,7 @@ cftool submit
 
 
 
-### 5. Display rating graph
+## 5. Display rating graph
 
 ```
 Usage: cftool-rating [options] [command]
@@ -152,15 +152,15 @@ cftool rating compare --handle1=<handle_name1> --handle2=<handle_name2>
 ```
 ![rating_compare](demo/rating_compare.gif)
 
-### 6. Logging out
+## 6. Logging out
 ```
 cftool logout
 ```
 ![logout](demo/logout.gif)
 
-### Changelog
+## Changelog
 [ Read the changelog here 🡒](https://github.com/vishishtpriyadarshi/codeforces-terminal/blob/master/CHANGELOG.md)
-### Features to be Added
+## Features to be Added
 
 - [X] Compare rating of users
 - [ ] Dynamic verdict display
